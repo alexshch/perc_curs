@@ -6,6 +6,7 @@ import java.util.Random;
 
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdDraw;
+import edu.princeton.cs.algs4.StdRandom;
 
 
 public class PercolationVisualizer {
@@ -54,7 +55,6 @@ public class PercolationVisualizer {
 
         // turn on animation mode
         StdDraw.show(0);
-        Random rnd = new Random();
         // repeatedly read in sites to open and draw resulting system
         Percolation perc = new Percolation(N);
         draw(perc, N);
@@ -62,14 +62,16 @@ public class PercolationVisualizer {
         //while (!in.isEmpty()) {
         while(true){
             //int i = in.readInt();
-            int i = rnd.nextInt(N)+1;
+            int i = StdRandom.uniform(N)+1;
             //int j = in.readInt();
-            int j = rnd.nextInt(N)+1;
+            int j = StdRandom.uniform(N)+1;
             if (perc.isOpen(i,j))
                 continue;
             perc.open(i, j);
             draw(perc, N);
             StdDraw.show(DELAY);
+            if (perc.percolates())
+                break;
         }
     }
 }
