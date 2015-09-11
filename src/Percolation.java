@@ -16,7 +16,7 @@ public class Percolation {
     private int SizeN;
     public Percolation(int N) {
         if (i <= 0 || i > N) throw new IndexOutOfBoundsException("row index i out of bounds");
-        
+
         grid = new WeightedQuickUnionUF(N*N);
         emptyOpenSites = new boolean[N][N];
         fullOpenSites = new boolean[N][N];

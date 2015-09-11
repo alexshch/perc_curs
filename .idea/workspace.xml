@@ -38,17 +38,17 @@
       <file leaf-file-name="Percolation.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Percolation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.92057765">
-              <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+            <state vertical-scroll-proportion="-1.4115523">
+              <caret line="55" column="49" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="49" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <element signature="e#1602#1603#0" expanded="true" />
-                <element signature="e#1642#1643#0" expanded="true" />
-                <element signature="e#3081#3082#0" expanded="true" />
-                <element signature="e#3128#3129#0" expanded="true" />
-                <element signature="e#3210#3211#0" expanded="true" />
-                <element signature="e#3257#3258#0" expanded="true" />
+                <element signature="e#1594#1595#0" expanded="true" />
+                <element signature="e#1634#1635#0" expanded="true" />
+                <element signature="e#3073#3074#0" expanded="true" />
+                <element signature="e#3120#3121#0" expanded="true" />
+                <element signature="e#3202#3203#0" expanded="true" />
+                <element signature="e#3249#3250#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -531,12 +531,12 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#1602#1603#0" expanded="true" />
-            <element signature="e#1642#1643#0" expanded="true" />
-            <element signature="e#3081#3082#0" expanded="true" />
-            <element signature="e#3128#3129#0" expanded="true" />
-            <element signature="e#3210#3211#0" expanded="true" />
-            <element signature="e#3257#3258#0" expanded="true" />
+            <element signature="e#1594#1595#0" expanded="true" />
+            <element signature="e#1634#1635#0" expanded="true" />
+            <element signature="e#3073#3074#0" expanded="true" />
+            <element signature="e#3120#3121#0" expanded="true" />
+            <element signature="e#3202#3203#0" expanded="true" />
+            <element signature="e#3249#3250#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -578,17 +578,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Percolation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.92057765">
-          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+        <state vertical-scroll-proportion="-1.4115523">
+          <caret line="55" column="49" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="49" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#1602#1603#0" expanded="true" />
-            <element signature="e#1642#1643#0" expanded="true" />
-            <element signature="e#3081#3082#0" expanded="true" />
-            <element signature="e#3128#3129#0" expanded="true" />
-            <element signature="e#3210#3211#0" expanded="true" />
-            <element signature="e#3257#3258#0" expanded="true" />
+            <element signature="e#1594#1595#0" expanded="true" />
+            <element signature="e#1634#1635#0" expanded="true" />
+            <element signature="e#3073#3074#0" expanded="true" />
+            <element signature="e#3120#3121#0" expanded="true" />
+            <element signature="e#3202#3203#0" expanded="true" />
+            <element signature="e#3249#3250#0" expanded="true" />
           </folding>
         </state>
       </provider>
