@@ -11,17 +11,13 @@ import java.util.Random;
 public class Percolation {
     // create N-by-N grid, with all sites blocked
     private WeightedQuickUnionUF openSitesGrid;
-    private WeightedQuickUnionUF fullSitesGrid;
     private boolean[][] emptyOpenSites;
-    private boolean[][] fullOpenSites;
     private int SizeN;
     public Percolation(int N) {
         if (N <= 0) throw new IndexOutOfBoundsException("too low N");
 
         openSitesGrid = new WeightedQuickUnionUF(N*N);
-        fullSitesGrid = new WeightedQuickUnionUF(N*N);
         emptyOpenSites = new boolean[N][N];
-        fullOpenSites = new boolean[N][N];
         SizeN = N;
 
         }
@@ -39,24 +35,6 @@ public class Percolation {
             }
 
             emptyOpenSites[i-1][j-1] = true;
-
-            //проверяем заполнена ли клетка
-            for(int l = 0; l < SizeN; l++){
-                if (openSitesGrid.connected(l,currentSite)){
-                    FullSite(i,j);
-                    break;
-                }
-            }
-            //обратная волна
-            if (isFull(i,j)) {
-                for (int n = 1; n < SizeN+1; n++) {
-                    for (int m = 1; m < SizeN+1; m++) {
-                        if (isOpen(n, m) && !isFull(n, m) && openSitesGrid.connected(currentSite,transformDecardCoordToUnionCoord(n,m))) {
-                            FullSite(n, m);
-                        }
-                    }
-                }
-            }
 
         }
     }
@@ -96,9 +74,6 @@ public class Percolation {
             }
         }
         return neighbors;
-
-
-
     }
 
     // is site (row i, column j) open?
@@ -108,22 +83,22 @@ public class Percolation {
 
     // is site (row i, column j) full?
     public boolean isFull(int i, int j) {
-        return  fullOpenSites[i-1][j-1];
+        int currentSite = transformDecardCoordToUnionCoord(i,j);
+        for (int k = 1; k < SizeN+1; k++){
+            int topSite =  transformDecardCoordToUnionCoord(1,k);
+            if (isOpen(1,k) && openSitesGrid.connected(topSite,currentSite)){
+                return true;
+            }
+        }
+        return false;
+        //return  fullOpenSites[i-1][j-1];
     }
-
-    private void FullSite(int i,int j){ fullOpenSites[i-1][j-1] = true; }
 
     // does the system percolate?
     public boolean percolates() {
         for(int i=1; i<SizeN+1; i++ ){
-            int bottom = transformDecardCoordToUnionCoord(SizeN,i);
-            for(int j =1; j<SizeN+1; j++){
-                int top = transformDecardCoordToUnionCoord(1,j);
-                if (openSitesGrid.connected(top,bottom)){
-                    return true;
-                }
-            }
-
+            if (isFull(SizeN,i))
+                return true;
         }
         return false;
     }
@@ -144,8 +119,6 @@ public class Percolation {
             trys++;
             if (percolation.percolates())
                 break;
-
-
         }
 
         System.out.println("final trys = "+String.valueOf(trys));
