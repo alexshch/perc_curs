@@ -51,27 +51,48 @@ public class PercolationVisualizer {
 
     public static void main(String[] args) {
         //In in = new In(args[0]);      // input file
-        int N = 20;//in.readInt();         // N-by-N percolation system
+        if (args.length == 0){
+            int N = 20;//in.readInt();         // N-by-N percolation system
 
-        // turn on animation mode
-        StdDraw.show(0);
-        // repeatedly read in sites to open and draw resulting system
-        Percolation perc = new Percolation(N);
-        draw(perc, N);
-        StdDraw.show(DELAY);
-        //while (!in.isEmpty()) {
-        while(true){
-            //int i = in.readInt();
-            int i = StdRandom.uniform(N)+1;
-            //int j = in.readInt();
-            int j = StdRandom.uniform(N)+1;
-            if (perc.isOpen(i,j))
-                continue;
-            perc.open(i, j);
+            // turn on animation mode
+            StdDraw.show(0);
+            // repeatedly read in sites to open and draw resulting system
+            Percolation perc = new Percolation(N);
             draw(perc, N);
             StdDraw.show(DELAY);
-            if (perc.percolates())
-                break;
+            //while (!in.isEmpty()) {
+            while (true) {
+                //int i = in.readInt();
+                int i = StdRandom.uniform(N) + 1;
+                //int j = in.readInt();
+                int j = StdRandom.uniform(N) + 1;
+                if (perc.isOpen(i, j))
+                    continue;
+                perc.open(i, j);
+                draw(perc, N);
+                StdDraw.show(DELAY);
+                if (perc.percolates())
+                    break;
+            }
+        }
+        else{
+            In in = new In(args[0]);      // input file
+            int N = in.readInt();         // N-by-N percolation system
+
+            // turn on animation mode
+            StdDraw.show(0);
+
+            // repeatedly read in sites to open and draw resulting system
+            Percolation perc = new Percolation(N);
+            draw(perc, N);
+            StdDraw.show(DELAY);
+            while (!in.isEmpty()) {
+                int i = in.readInt();
+                int j = in.readInt();
+                perc.open(i, j);
+                draw(perc, N);
+                StdDraw.show(DELAY);
+            }
         }
     }
 }
